@@ -82,37 +82,62 @@ Sternchen markiert wurden, wurden in den handschriftlichen Messdaten falsch aufg
     \label{tab:250}
 \end{table}
 
-\begin{table}
+\newpage
+Nun werden die Abstiegs- und Aufstiegsgeschwindigkeiten sowie die Gleichgewichtsgeschwindigkeit $v_0$ mittels
+\begin{equation*}
+    v=\frac{s}{t}
+\end{equation*} 
+berechnet. Dabei ist $s=0.5\,\unit{\milli\m}$. Desweiteren werden die Geschwindigkeiten $v_{\symup[auf]}$ und $v_{\symup[ab]}$ für jeden Tropfen gemittelt und dann
+dessen Differenz $\bar{v}_{\symup[ab]}-\bar{v}_{\symup[auf]}$ betrachtet. Alle Werte werden in \autoref{tab:200geschw} dargestellt. 
+Die Differenz $\bar{v}_{\symup[ab]}-\bar{v}_{\symup[auf]}$ wird durch die Relation
+\begin{equation*}
+    $\bar{v}_{\symup[ab]}-\bar{v}_{\symup[auf]}$ = 2v_0
+\end{equation*}
+mit der Gleichgewichtsgeschwindigkeit verglichen. dabei fällt auf, dass nur der erste und der fünfte gemessene Tropfen die Bedingung erfüllen. 
+
+
+
+\begin{sidewaystable}
     \centering
-    \caption{Messdaten der Auf- und Abstiegszeit bei $U=250\,\unit{\V}$.}
-\begin{tabular}{c c c c}
+    \caption{Messdaten der Auf- und Abstiegsgeschwindigkeit bei $U=201\,\unit{\V}$.}
+\begin{tabular}{c c c c c c c c}
     \toprule
-        Tröpfchen &$t_{\symup{auf}} \mathbin{/} \unit{\s}$ & $t_{\symup{ab}}\mathbin{/} \unit{\s}$ & $t_0 \mathbin{/}\unit{\s}$ \\
+        Tröpfchen &$v_{\symup{auf}} \mathbin{/} 10^{-6}\unit{\m\per\s}$ & $v_{\symup{ab}}\mathbin{/} 10^{-6}\unit{\m\per\s}$ & $\bar{v}_{\symup{auf}} \mathbin{/} 10^{-6}\unit{\m\per\s}$& $\bar{v}_{\symup{ab}} \mathbin{/} 10^{-6}\unit{\m\per\s}$ & $\bar{v}_{\symup{ab}} -\bar{v}_{\symup{ab}} \mathbin{/} 10^{-6}\unit{\m\per\s}$ & $v_0 \mathbin{/}10^{-6}\unit{\m\per\s}$ & $2v_0 \mathbin{/}10^{-6}\unit{\m\per\s}$\\
     \midrule
-    1;7.19;3.29;12.57;0.0695;0.1520;0.0650;0.1333;0... \\
-    ;8.02;3.65;;0.0623;0.1370;;;;; \\
-    ;7.91;4.51;;0.0632;0.1109;;;;; \\
-2;3.00;2.97;37.04;0.1667;0.1684;0.1586;0.2742;0... \\
-    ;3.19;3.05;;0.1567;0.1639;;;;; \\
-    ;3.28;1.02;;0.1524;0.4902;;;;; \\
-3;1.43;1.24;73.73;0.3497;0.4032;0.3620;0.4067;0... \\
-    ;1.60;1.10;;0.3125;0.4545;;;;; \\
-    ;1.18;1.38;;0.4237;0.3623;;;;; \\
-4;1.28;1.00;72.05;0.3906;0.5000;0.3937;0.4251;0... \\
-    ;1.11;1.28;;0.4505;0.3906;;;;; \\
-    ;1.47;1.30;;0.3401;0.3846;;;;; \\
-5;5.38;2.06;26.80;0.0929;0.2427;0.1641;0.2053;0... \\
-    ;1.95;2.32;;0.2564;0.2155;;;;; \\
-    ;3.50;3.17;;0.1429;0.1577;;;;; \\
-6;1.82;2.80;62.36;0.2747;0.1786;0.1326;0.1927;0... \\
-    ;7.80;2.18;;0.0641;0.2294;;;;; \\
-    ;8.50;2.94;;0.0588;0.1701;;;;; \\
-7;9.29;3.72;31.75;0.0538;0.1344;0.0496;0.1368;0... \\
-    ;8.29;4.11;;0.0603;0.1217;;;;; \\
-   ;14.39;3.24;;0.0347;0.1543;;;;; \\
-    ;1.99;1.79;;0.2513;0.2793;;;;; \\
-    ;2.45;1.78;;0.2041;0.2809;;;;; \\
+    1&0.0695&0.1520&0.0650&0.1333&0.0682&0.0398&0.0796\\
+    &0.0623&0.1370&&&&& \\
+    &0.0632&0.1109&&&&& \\
+2&0.1667&0.1684&0.1586&0.2742&0.1155&0.0135&0.0270\\
+    &0.1567&0.1639&&&&& \\
+    &0.1524&0.4902&&&&& \\
+3&0.3497&0.4032&0.3620&0.4067&0.0447&0.0068&0.0136\\
+    &0.3125&0.4545&&&&& \\
+    &0.4237&0.3623&&&&& \\
+4&0.3906&0.5000&0.3937&0.4251&0.0313&0.0069&0.0139\\
+    &0.4505&0.3906&&&&& \\
+    &0.3401&0.3846&&&&& \\
+5&0.0929&0.2427&0.1641&0.2053&0.0413&0.0187&0.0373\\
+    &0.2564&0.2155&&&&& \\
+    &0.1429&0.1577&&&&& \\
+6&0.2747&0.1786&0.1326&0.1927&0.0601&0.0080&0.0160\\
+    &0.0641&0.2294&&&&& \\
+    &0.0588&0.1701&&&&& \\
+7&0.0538&0.1344&0.0496&0.1368&0.0872&0.0157&0.0315 \\
+    &0.0603&0.1217&&&&& \\
+   &0.0347&0.1543&&&&& \\
+8&0.0739&0.0609&0.0532&0.0686&0.0153&0.0245&0.0490 \\
+    &0.0469&0.0588&&&&&\\
+    &0.0389&0.0861&&&&&\\
+9&0.2451&0.3333&0.2315&0.2893&0.0579&0.0069&0.0138\\
+    &0.2347&0.2809&&&&&\\
+    &0.2146&0.2538&&&&&\\
+10&0.2427&0.3086&0.2327&0.2896&0.0569&0.0068&0.0135\\
+    &0.2513&0.2793&&&&&\\
+    &0.2041&0.2809&&&&&\\
     \bottomrule
     \end{tabular}
-    \label{tab:250}
-\end{table}
+    \label{tab:200geschw}
+\end{sidewaystable}
+
+Von diesen beiden wird nun mittels \textbf{Referenz Radius} berechnet. Dabei wird die temperaturabhängige Viskosität von Luft benötigt, dessen Werte 
+in \autoref{tab:Viskositaet} aufgetragen sind.
