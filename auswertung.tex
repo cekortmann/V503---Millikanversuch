@@ -88,10 +88,10 @@ Nun werden die Abstiegs- und Aufstiegsgeschwindigkeiten sowie die Gleichgewichts
     v=\frac{s}{t}
 \end{equation*} 
 berechnet. Dabei ist $s=0.5\,\unit{\milli\m}$. Desweiteren werden die Geschwindigkeiten $v_{\symup[auf]}$ und $v_{\symup[ab]}$ für jeden Tropfen gemittelt und dann
-dessen Differenz $\bar{v}_{\symup[ab]}-\bar{v}_{\symup[auf]}$ betrachtet. Alle Werte werden in \autoref{tab:200geschw} dargestellt. 
-Die Differenz $\bar{v}_{\symup[ab]}-\bar{v}_{\symup[auf]}$ wird durch die Relation
+dessen Differenz $\bar{v}_{\symup{ab}}-\bar{v}_{\symup{auf}}$ betrachtet. Alle Werte werden in \autoref{tab:200geschw} dargestellt. 
+Die Differenz $\bar{v}_{\symup{ab}}-\bar{v}_{\symup{auf}}$ wird durch die Relation
 \begin{equation*}
-    $\bar{v}_{\symup[ab]}-\bar{v}_{\symup[auf]}$ = 2v_0
+    \bar{v}_{\symup{ab}}-\bar{v}_{\symup{auf}} = 2v_0
 \end{equation*}
 mit der Gleichgewichtsgeschwindigkeit verglichen. dabei fällt auf, dass nur der erste und der fünfte gemessene Tropfen die Bedingung erfüllen. 
 
@@ -139,5 +139,33 @@ mit der Gleichgewichtsgeschwindigkeit verglichen. dabei fällt auf, dass nur der
     \label{tab:200geschw}
 \end{sidewaystable}
 
-Von diesen beiden wird nun mittels \textbf{Referenz Radius} berechnet. Dabei wird die temperaturabhängige Viskosität von Luft benötigt, dessen Werte 
-in \autoref{tab:Viskositaet} aufgetragen sind.
+Von diesen beiden wird nun mittels \textbf{Referenz Radius} der Tröpfchenradius berechnet. Dabei wird die temperaturabhängige Viskosität von Luft benötigt, dessen Werte 
+in \autoref{tab:Viskositaet} aufgetragen sind. Für die Dichte von Luft wird $\rho_{\symup{L}} = 1.024 \,\unit{\kg\per\m^3}$ \cite{luftdichte} 
+und für die Dichte von Öl wird $\rho_{\symup{Öl}} = 886 \,\unit{\kg\per\m^3}$ \cite{ap503} angenommen.
+
+\begin{table}
+    \centering
+    \caption{Lufttemperaturen und Luftviskositäten \cite{ap503}.}
+\begin{tabular}{c c c}
+    \toprule
+        $R\mathbin{/}\unit{\mega\ohm}$ &$T\mathbin{/}\unit{\celsius}$ & $\eta_{\symup{L}}\mathbin{/}10^{-5}\symup{Nsm^{-2}}$ \\
+    \midrule
+    2.05 & 24.0 & 1.844 \\
+    2.08 & 23.5 & 1.840\\
+    2.17 & 22.0 & 1.834\\
+    2.20 & 21.5 & 1.832\\
+     \bottomrule
+    \end{tabular}
+    \label{tab:Viskositaet}
+\end{table}
+
+Damit berechnen sich die Radien zu
+\begin{align*}
+    r_1 &= 2.5470 \cdot 10^{-5} \,\unit{\m} \; ,\\
+    r_5 &= 4.2380 \cdot 10^{-5} \,\unit{\m}\; .
+\end{align*}
+
+Wenn diese mit der Cunningham-Korrektur angepasst werden, ergibt sich
+
+
+Dabei wurde ein Luftdruck von 

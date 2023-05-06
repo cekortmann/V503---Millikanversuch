@@ -10,10 +10,14 @@ from uncertainties.unumpy import uarray                     # Array von Fehler: 
 from uncertainties.unumpy import (nominal_values as noms,   # Wert:             noms(fehlerwert) = x
                                   std_devs as stds)  
 
-def Blang(I,l):
-    return 12.566*10**(-7)*1*3400*I/l
+def radius(eta,vab,vauf):
+    return np.sqrt((9*eta*(vab-vauf))/(2*9.81*(886-1.204)))
 
-uI = ufloat(0.5, 0.1)
-ul = ufloat(0.102, 0.005)
+eta205 = 1.844*10**(-5)
+eta208 = 1.840*10**(-5)
+eta217 = 1.834*10**(-5)
+eta220 = 1.832*10**(-5)
+vab = 0.2053
+vauf = 0.01641
 
-print(Blang(uI, ul))
+print(radius(eta217, vab, vauf))
