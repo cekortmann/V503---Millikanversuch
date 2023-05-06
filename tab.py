@@ -14,4 +14,8 @@ from uncertainties.unumpy import (nominal_values as noms,   # Wert:             
 
 md = pd.read_csv('200V_Geschw.csv')
 # md_a = md.iloc[:, [0,1]]
+#print(md.to_latex(index = False, column_format= "c c c c c c c c c c c", decimal='.')) 
+
+md = pd.read_csv('250V_Geschw.csv')
+md_a = md.iloc[:, [3,10]]
 print(md.to_latex(index = False, column_format= "c c c c c c c c c c c", decimal='.')) 
