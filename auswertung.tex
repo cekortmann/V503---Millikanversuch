@@ -87,12 +87,13 @@ Nun werden die Abstiegs- und Aufstiegsgeschwindigkeiten sowie die Gleichgewichts
 \begin{equation*}
     v=\frac{s}{t}
 \end{equation*} 
-berechnet. Dabei ist $s=0.5\,\unit{\milli\m}$. Desweiteren werden die Geschwindigkeiten $v_{\symup[auf]}$ und $v_{\symup[ab]}$ für jeden Tropfen gemittelt und dann
+berechnet. Dabei ist $s=0.5\,\unit{\milli\m}$. Des Weiteren werden die Geschwindigkeiten $v_{\symup{auf}}$ und $v_{\symup{ab}}$ für jeden Tropfen gemittelt und dann
 dessen Differenz $\bar{v}_{\symup{ab}}-\bar{v}_{\symup{auf}}$ betrachtet. Alle Werte werden in \autoref{tab:200geschw} dargestellt. 
 Die Differenz $\bar{v}_{\symup{ab}}-\bar{v}_{\symup{auf}}$ wird durch die Relation
-\begin{equation*}
+\begin{equation}
     \bar{v}_{\symup{ab}}-\bar{v}_{\symup{auf}} = 2v_0
-\end{equation*}
+    \label{eqn:gültigkeit}
+\end{equation}
 mit der Gleichgewichtsgeschwindigkeit verglichen. dabei fällt auf, dass nur der erste und der fünfte gemessene Tropfen die Bedingung erfüllen. 
 
 
@@ -139,9 +140,16 @@ mit der Gleichgewichtsgeschwindigkeit verglichen. dabei fällt auf, dass nur der
     \label{tab:200geschw}
 \end{sidewaystable}
 
-Von diesen beiden wird nun mittels \textbf{Referenz Radius} der Tröpfchenradius berechnet. Dabei wird die temperaturabhängige Viskosität von Luft benötigt, dessen Werte 
+Von diesen beiden wird nun mittels \autoref{eqn:r1} der Tröpfchenradius berechnet. Dabei wird die temperaturabhängige Viskosität von Luft benötigt, dessen Werte 
 in \autoref{tab:Viskositaet} aufgetragen sind. Für die Dichte von Luft wird $\rho_{\symup{L}} = 1.024 \,\unit{\kg\per\m^3}$ \cite{luftdichte} 
 und für die Dichte von Öl wird $\rho_{\symup{Öl}} = 886 \,\unit{\kg\per\m^3}$ \cite{ap503} angenommen.
+
+
+
+
+
+
+
 
 \begin{sidewaystable}
     \centering
@@ -150,29 +158,28 @@ und für die Dichte von Öl wird $\rho_{\symup{Öl}} = 886 \,\unit{\kg\per\m^3}$
     \toprule
         Tröpfchen &$v_{\symup{auf}} \mathbin{/} 10^{-6}\unit{\m\per\s}$ & $v_{\symup{ab}}\mathbin{/} 10^{-6}\unit{\m\per\s}$ & $\bar{v}_{\symup{auf}} \mathbin{/} 10^{-6}\unit{\m\per\s}$& $\bar{v}_{\symup{ab}} \mathbin{/} 10^{-6}\unit{\m\per\s}$ & $\bar{v}_{\symup{ab}} -\bar{v}_{\symup{ab}} \mathbin{/} 10^{-6}\unit{\m\per\s}$ & $v_0 \mathbin{/}10^{-6}\unit{\m\per\s}$ & $2v_0 \mathbin{/}10^{-6}\unit{\m\per\s}$\\
     \midrule
-    1&0.2660&0.3311&0.1900&0.2350&0.0459&0.0054&0.0108 \\
+    11&0.2660&0.3311&0.1900&0.2350&0.0459&0.0054&0.0108 \\
               &0.0882&0.2747&&&&& \\
               &0.2128&0.0988&&&&& \\
-    2&0.1002&0.0967&0.1028&0.1206&0.0178&0.0047&0.0095 \\
+    12&0.1002&0.0967&0.1028&0.1206&0.0178&0.0047&0.0095 \\
               &0.0988&0.1082&&&&& \\
               &0.1094&0.1567&&&&& \\
-    3&0.1004&0.1014&0.0978&0.1125&0.0147& NaN & NaN\\
+    13&0.1004&0.1014&0.0978&0.1125&0.0147& NaN & NaN\\
               &0.0863&0.1136&&&&& \\
                &0.1066&0.1225&&&&& \\
-    4&0.0565&0.1099&0.0587&0.1042&0.0454&0.0228&0.0457 \\
+    14&0.0565&0.1099&0.0587&0.1042&0.0454&0.0228&0.0457 \\
               &0.0611&0.1012&&&&& \\
               &0.0588&0.1014&&&&& \\
-    5&0.0914&0.1025&0.0894&0.0990&0.0096& NaN& NaN \\
+    15&0.0914&0.1025&0.0894&0.0990&0.0096& NaN& NaN \\
               &0.0847&0.0952&&&&& \\
               &0.0921&0.0994&&&&& \\
-    6&0.0421&0.0648&0.0466&0.0627&0.0161&0.0103&0.0206 \\
+    16&0.0421&0.0648&0.0466&0.0627&0.0161&0.0103&0.0206 \\
               &0.0472&0.0593&&&&& \\
             &0.0506&0.0639&&&&& \\
     \bottomrule
     \end{tabular}
     \label{tab:2500geschw}
 \end{sidewaystable}
-
 \begin{table}
     \centering
     \caption{Lufttemperaturen und Luftviskositäten \cite{ap503}.}
@@ -194,6 +201,21 @@ Damit berechnen sich die Radien zu
     r_1 &= 2.5470 \cdot 10^{-5} \,\unit{\m} \; ,\\
     r_5 &= 4.2380 \cdot 10^{-5} \,\unit{\m}\; .
 \end{align*}
+Für die zweite Messreihe mit einer Kondensatorspannung von $250\, \unit{\volt}$ war es teilweise nicht möglich eine Gleichgewichtsgeschwindigkeit $v_0$ zu bestimmen, da die Tröpfchen sich ohne E-Feld nicht bewegt haben.
+Aus der zweiten Messreihe sind somit nur 2 Werte, die die Relation aus \autoref{eqn:gültigkeit} erfüllen.
+Die weiteren Berechnungen sind somit nur mit Daten dieser Tropfen valide.
+%Nach \autoref{eqn:r1} ergeben sich die Radien der beiden Tröpfchen zu 
+%\begin{align*}
+%    r_14& = 1.4764\cdot 10^{-5}\, \unit{\meter}\\
+%    r_16& = 9.9231\cdot 10^{-6}\, \unit{\meter}\. .
+%\end{align*}
+Das Bestimmen des Radius ist über \autoref{eqn:r2} möglich.
+Somit folgen für die Radien 
+\begin{align*}
+    r_14& =2.0856\cdot 10^{-5}\, \unit{\meter}\\
+    r_16& =  7.2913\cdot 10^{-5}\, \unit{\meter}\. .
+\end{align*}
+
 
 Wenn diese mit der Cunningham-Korrektur angepasst werden, ergibt sich
 
