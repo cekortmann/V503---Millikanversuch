@@ -28,8 +28,10 @@ eta205 = 1.844*10**(-5)
 eta208 = 1.840*10**(-5)
 eta217 = 1.834*10**(-5)
 eta220 = 1.832*10**(-5)
-vab = 0.1333
-vauf = 0.0065
+vab1= 0.2053
+vauf1 = 0.14641
+vab5 = 0.1333
+vauf5 = 0.0065
 
 v251auf=0.0587
 v251ab =0.1042
@@ -38,7 +40,7 @@ v252ab = 0.6027
 v2510  =0.0228
 v2520  =0.0103
 
-print(radius2(eta217, vab, vauf))
+#print(radius2(eta217, vab, vauf))
 
 #print('Radius 1 250V Tröpfchen 14',radius1(eta205,v2510))
 #print('Radius 1 250V Tröpfchen 16',radius1(eta205,v2520))
