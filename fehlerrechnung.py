@@ -20,10 +20,10 @@ def neff(n,p,r):
     return n*(1/(1+6.17*10**(-6)*1/p*r))
 
 def q(n,vab,vauf,U, d):
-    return 3*np.pi*n*np.sqrt(9*n*(vab-vauf)/(4**9.81*(886-1.204)))*(vab-vauf)/(U/d)
+    return 3*np.pi*np.sqrt(9*n**3*(vab-vauf)/(4*9.81*(886-1.204)))*(vab+vauf)/(U)*d
 
 def qkorr (q0, r):
-    return (q0**(2/3)*(1+6.17*10**(-6)/(101300/r)))**(3/2)
+    return (q0**(2/3)*(1+6.17*10**(-5)/(101300*r)))**(3/2)
 
 q1= ufloat(4.5015*10**(-14), 0.003*10**(-14))
 q5 = ufloat(1.4246*10**(-13), 0.001*10**(-13))
@@ -35,13 +35,10 @@ r5=  2.9967 *10**(-5)
 r14 = 1.4748 * 10**(-5)
 r16 = 5.1558*10**(-5)
 
-print(qkorr(q1,r1))
-print(qkorr(q5,r5))
-print(qkorr(q14,r14))
-print(qkorr(q16,r16))
+
 
 p=101300
-du= ufloat(7.6250, 0.0051)
+du= ufloat(7.6250*10**(-3), 0.0051*10**(-3))
 eta205 = 1.844*10**(-5)
 eta208 = 1.840*10**(-5)
 eta217 = 1.834*10**(-5)
@@ -58,17 +55,22 @@ v252ab = 0.6027
 v2510  =0.0228
 v2520  =0.0103
 
-print(radius2(eta220, vab1, vauf1))
+#print(radius2(eta220, vab1, vauf1))
 
 #print('Radius 1 250V Tröpfchen 14',radius1(eta205,v2510))
 #print('Radius 1 250V Tröpfchen 16',radius1(eta205,v2520))
 
-print('Radius 2 250V Tröpfchen 14',radius2(eta205,v251ab,v251auf))
-print('Radius 2 250V Tröpfchen 16',radius2(eta205,v252ab,v252auf))
+#print('Radius 2 250V Tröpfchen 14',radius2(eta205,v251ab,v251auf))
+#print('Radius 2 250V Tröpfchen 16',radius2(eta205,v252ab,v252auf))
 
 #print('Korrigiert 14',neff(eta205,p,radius2(eta205,v251ab,v251auf)))
 #print('Korrigiert 16',neff(eta205,p,radius2(eta205,v252ab,v252auf)))
 
+print(qkorr(q(eta220, vab1, vauf1, 201, du),r1))
+print(qkorr(q(eta217, vab5, vauf5, 201, du),r5))
+print(qkorr(q(eta205, v251ab, v251auf, 250, du),r14))
+print(qkorr(q(eta205, v252ab, v252auf, 250, du),r16))
+print('unkorrigiert')
 print(q(eta220, vab1, vauf1, 201, du))
 print(q(eta217, vab5, vauf5, 201, du))
 print(q(eta205, v251ab, v251auf, 250, du))
