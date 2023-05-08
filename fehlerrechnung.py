@@ -11,16 +11,16 @@ from uncertainties.unumpy import (nominal_values as noms,   # Wert:             
                                   std_devs as stds)  
 
 def radius2(eta,vab,vauf):
-    return np.sqrt((9*eta*(vab-vauf))/(2*9.81*(886-1.204)))
+    return np.sqrt((9*eta*(vab-vauf))/(4*9.81*(886-1.204)))
 
 def radius1(eta,v0):
-    return np.sqrt((9*eta*v0)/(2*9.81*(886-1.204)))
+    return np.sqrt((9*eta*v0)/(4*9.81*(886-1.204)))
 
 def neff(n,p,r):
     return n*(1/(1+6.17*1**(-5)*1/p*r))
 
 def q(n,vab,vauf,V):
-    return 3*np.pi*n*np.sqrt(9*n*(vab-vauf)/2**9.81*(886-1.204))*(vab-vauf)/(V/d)
+    return 3*np.pi*n*np.sqrt(9*n*(vab-vauf)/(4**9.81*(886-1.204)))*(vab-vauf)/(V/d)
 
 p=101300
 du= ufloat(7.6250, 0.0051)
@@ -28,8 +28,8 @@ eta205 = 1.844*10**(-5)
 eta208 = 1.840*10**(-5)
 eta217 = 1.834*10**(-5)
 eta220 = 1.832*10**(-5)
-vab = 0.2053
-vauf = 0.01641
+vab = 0.1333
+vauf = 0.0065
 
 v251auf=0.0587
 v251ab =0.1042
