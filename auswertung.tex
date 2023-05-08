@@ -103,7 +103,7 @@ mit der Gleichgewichtsgeschwindigkeit verglichen. Dabei fällt auf, dass nur der
     \caption{Messdaten der Auf- und Abstiegsgeschwindigkeit bei $U=201\,\unit{\V}$.}
 \begin{tabular}{c c c c c c c c}
     \toprule
-        Tröpfchen &$v_{\symup{auf}} \mathbin{/} 10^{-6}\unit{\m\per\s}$ & $v_{\symup{ab}}\mathbin{/} 10^{-6}\unit{\m\per\s}$ & $\bar{v}_{\symup{auf}} \mathbin{/} 10^{-6}\unit{\m\per\s}$& $\bar{v}_{\symup{ab}} \mathbin{/} 10^{-6}\unit{\m\per\s}$ & $\bar{v}_{\symup{ab}} -\bar{v}_{\symup{ab}} \mathbin{/} 10^{-6}\unit{\m\per\s}$ & $v_0 \mathbin{/}10^{-6}\unit{\m\per\s}$ & $2v_0 \mathbin{/}10^{-6}\unit{\m\per\s}$\\
+        Tröpfchen &$v_{\symup{auf}} \mathbin{/} 10^{-3}\unit{\m\per\s}$ & $v_{\symup{ab}}\mathbin{/} 10^{-3}\unit{\m\per\s}$ & $\bar{v}_{\symup{auf}} \mathbin{/} 10^{-3}\unit{\m\per\s}$& $\bar{v}_{\symup{ab}} \mathbin{/} 10^{-3}\unit{\m\per\s}$ & $\bar{v}_{\symup{ab}} -\bar{v}_{\symup{ab}} \mathbin{/} 10^{-3}\unit{\m\per\s}$ & $v_0 \mathbin{/}10^{-3}\unit{\m\per\s}$ & $2v_0 \mathbin{/}10^{-3}\unit{\m\per\s}$\\
     \midrule
     1&0.0695&0.1520&0.0650&0.1333&0.0682&0.0398&0.0796\\
     &0.0623&0.1370&&&&& \\
@@ -151,7 +151,7 @@ und für die Dichte von Öl wird $\rho_{\symup{Öl}} = 886 \,\unit{\kg\per\m^3}$
     \caption{Messdaten der Auf- und Abstiegsgeschwindigkeit bei $U=250\,\unit{\V}$.}
 \begin{tabular}{c c c c c c c c}
     \toprule
-        Tröpfchen &$v_{\symup{auf}} \mathbin{/} 10^{-6}\unit{\m\per\s}$ & $v_{\symup{ab}}\mathbin{/} 10^{-6}\unit{\m\per\s}$ & $\bar{v}_{\symup{auf}} \mathbin{/} 10^{-6}\unit{\m\per\s}$& $\bar{v}_{\symup{ab}} \mathbin{/} 10^{-6}\unit{\m\per\s}$ & $\bar{v}_{\symup{ab}} -\bar{v}_{\symup{ab}} \mathbin{/} 10^{-6}\unit{\m\per\s}$ & $v_0 \mathbin{/}10^{-6}\unit{\m\per\s}$ & $2v_0 \mathbin{/}10^{-6}\unit{\m\per\s}$\\
+        Tröpfchen &$v_{\symup{auf}} \mathbin{/} 10^{-3}\unit{\m\per\s}$ & $v_{\symup{ab}}\mathbin{/} 10^{-3}\unit{\m\per\s}$ & $\bar{v}_{\symup{auf}} \mathbin{/} 10^{-3}\unit{\m\per\s}$& $\bar{v}_{\symup{ab}} \mathbin{/} 10^{-3}\unit{\m\per\s}$ & $\bar{v}_{\symup{ab}} -\bar{v}_{\symup{ab}} \mathbin{/} 10^{-3}\unit{\m\per\s}$ & $v_0 \mathbin{/}10^{-3}\unit{\m\per\s}$ & $2v_0 \mathbin{/}10^{-3}\unit{\m\per\s}$\\
     \midrule
     11&0.2660&0.3311&0.1900&0.2350&0.0459&0.0054&0.0108 \\
               &0.0882&0.2747&&&&& \\
@@ -193,8 +193,8 @@ und für die Dichte von Öl wird $\rho_{\symup{Öl}} = 886 \,\unit{\kg\per\m^3}$
 
 Damit berechnen sich die Radien zu
 \begin{align*}
-    r_1 &= 2.4552 \cdot 10^{-5} \,\unit{\m} \; ,\\
-    r_5 &= 2.9967 \cdot 10^{-5} \,\unit{\m}\; .
+    r_1 &= 1.6723 \cdot 10^{-7} \,\unit{\m} \; ,\\
+    r_5 &= 2.9967 \cdot 10^{-7} \,\unit{\m}\; .
 \end{align*}
 Für die zweite Messreihe mit einer Kondensatorspannung von $250\, \unit{\volt}$ war es teilweise nicht möglich eine Gleichgewichtsgeschwindigkeit $v_0$ zu bestimmen, da die Tröpfchen sich ohne E-Feld nicht bewegt haben.
 Aus der zweiten Messreihe sind somit nur 2 Werte, die die Relation aus \autoref{eqn:gültigkeit} erfüllen.
@@ -207,11 +207,34 @@ Die weiteren Berechnungen sind somit nur mit Daten dieser Tropfen valide.
 Das Bestimmen des Radius ist über \autoref{eqn:r2} möglich.
 Somit folgen für die Radien 
 \begin{align*}
-    r_{14}& =1.4748\cdot 10^{-5}\, \unit{\meter}\\
-    r_{16}& =  5.1558\cdot 10^{-5}\, \unit{\meter}\. .
+    r_{14}& = 1.4748\cdot 10^{-7}\, \unit{\meter}\\
+    r_{16}& =  5.1558\cdot 10^{-7}\, \unit{\meter}\. .
 \end{align*}
 
 Dabei wurde ein Luftdruck von $1.013\,\unit{\milli\bar}$ verwendet \cite{ap503}.
 
 Die Ladungen der jeweiligen Tröpfchen berechnen sich zu mittels \autoref{eqn:q} und werden in \autoref{tab:q} dargestellt. Es wird ebenfalls die
 korrigierte Ladung mittels \autoref{eqn:qeff} berechnet.
+\begin{table}
+    \centering
+    \caption{Ladungen und korrigierte Ladungen.}
+\begin{tabular}{c c c }
+    \toprule
+        Tröpfchen & $q \mathbin{/} 10^{-19}\unit{\coulomb}$ &$q_{\symup{korr}} \mathbin{/} 10^{-14}\unit{\coulomb}$  \\
+    \midrule
+    1& 12.183 \pm 0.008 & 22.059 \pm 0.015 \\
+    5 & 7.117 \pm 0.005 & 10.198 \pm 0.007 \\
+    14 & 4.0269 \pm 0.003 & 7.776 \pm 0.005 \\
+    16 & 56.11 \pm 0.04 & 69.88 \pm 0.05 \\
+    \bottomrule
+    \end{tabular}
+    \label{tab:q}
+\end{table}
+
+In \autoref{fig:ladungkorr} werden nun zur Bestimmung der Elementarladung die korrigierten Ladungen aufgetragen.
+\begin{figure}
+    \centering
+    \includegraphics[height = 12cm]{build/Ladung.pdf}
+    \caption{Korrigierte Ladungen.}
+    \label{fig:ladungkorr}
+\end{figure}
