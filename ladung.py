@@ -13,17 +13,29 @@ from uncertainties.unumpy import (nominal_values as noms,   # Wert:             
 
 # Plot 1:
 
-qc0=[2.2059*10**(-18), 1.0198*10**(-18), 7.776*10**(-19), 6.988*10**(-18)]
-qcerr=[0.0015*10**(-18), 0.0007*10**(-18), 0.005*10**(-19), 0.005*10**(-18)]
+qc0=[7.776,10.198, 22.059, 69.88]
+qcerr=[0.005*10**(-19),0.0007*10**(-18),0.0015*10**(-18), 0.005*10**(-18)]
+def näherung(a,x):
+    return a*x
 
-messwerte=[1,2,3,4]
+messwerte=[3,4,9,29]
+x=np.linspace(0,30,100)
 plt.plot(messwerte, qc0, 'x', label='Ladung nach Korrektur')
+plt.plot(x, 1.609*x, '-', label='Theoriekurve')
 plt.errorbar(messwerte, qc0, yerr=qcerr, elinewidth = 0.7, linewidth = 0, markersize = 7, capsize=3)
-plt.xlabel('Messung')
-plt.xlim(0, 5)
+plt.xlabel(r'Messung der Größe nach sortiert')
+plt.ylabel(r'Ladung der Öltröpfchen in $Q \, / \, 10^{-18} \mathrm{C}$ ')
+#plt.xlim(0, )
+y,x = np.genfromtxt('Ladung.txt', unpack=True)
+params = curve_fit(näherung,x,y)
+a_fit = params[0][0]
+#b_fit = params[0][1]
+h=np.linspace(0,30,10)
+plt.plot(h, näherung(a_fit,h), 'orange', linewidth = 1, label = 'Ausgleichskurve', alpha=0.5)
+print('a_fit', a_fit)
+#print('b_fit', b_fit)
 plt.xticks(color='w')
 plt.grid()
 plt.legend(loc='best')
-
 plt.savefig('build/Ladung.pdf', bbox_inches = "tight")
 plt.clf() 
