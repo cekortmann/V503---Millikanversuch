@@ -199,6 +199,8 @@ Damit berechnen sich die Radien zu
     r_1 &= 1.6723 \cdot 10^{-7} \,\unit{\m} \; ,\\
     r_5 &= 2.9967 \cdot 10^{-7} \,\unit{\m}\; .
 \end{align*}
+Als Fehlerabweichung wird dabei für die Zeit $\symup{\Delta} t = 0.01\,\unit{\sec}$ und für die Strecke $\symup{\Delta}s = 0.02\,\unit{\mm}$.
+
 Für die zweite Messreihe mit einer Kondensatorspannung von $250\, \unit{\volt}$ war es teilweise nicht möglich eine Gleichgewichtsgeschwindigkeit $v_0$ zu bestimmen, da die Tröpfchen sich ohne E-Feld nicht bewegt haben.
 Aus der zweiten Messreihe sind somit nur 2 Werte, die die Relation aus \autoref{eqn:gültigkeit} erfüllen.
 Die weiteren Berechnungen sind somit nur mit Daten dieser Tropfen valide.
@@ -216,7 +218,7 @@ Somit folgen für die Radien
 
 Dabei wurde ein Luftdruck von $1.013\,\unit{\milli\bar}$ verwendet \cite{ap503}.
 
-Die Ladungen der jeweiligen Tröpfchen berechnen sich zu mittels \autoref{eqn:q} und werden in \autoref{tab:q} dargestellt. Es wird ebenfalls die
+Die Ladungen der jeweiligen Tröpfchen berechnen sich mittels \autoref{eqn:q} zu und werden in \autoref{tab:q} dargestellt. Es wird ebenfalls die
 korrigierte Ladung mittels \autoref{eqn:qeff} berechnet.
 \begin{table}
     \centering
@@ -241,17 +243,26 @@ In \autoref{fig:ladungkorr} werden nun zur Bestimmung der Elementarladung die ko
     \caption{Korrigierte Ladungen.}
     \label{fig:ladungkorr}
 \end{figure}
-Die Ladungen wurden ihrer Größe nach sortiert und in so zugeteilt, dass eine lineare Ausgleichskurve durch diese gelegt werden kann.
+Die Ladungen wurden ihrer Größe nach sortiert und so zugeteilt, dass eine lineare Ausgleichskurve
+\begin{equation*}
+    y = mx + b
+\end{equation*}
+durch diese gelegt werden kann.
+Die Parameter ergeben sich zu 
+\begin{align*}
+    m &=  \\
+    b &=   \; . \\
+\end{align*}
 Nach zunächst groben Sortieren folgte die genauere Einordnung der Ladungen in ein Vielfaches von dem größten gemeinsamen Teiler, welcher dann dem Wert der gesuchten Elementarladung $e_0$ entspricht.
-Die Steigung dieser Ausgleichsgerade entspricht demnach der gesuchten Größe.
+Die Steigung $m$ dieser Ausgleichsgerade entspricht demnach der gesuchten Größe.
 Der graphisch bestimmte Wert für die Elementarladung liegt bei $e_0=2.417\cdot 10^{-19}\,\unit{\coulomb}$ und entspricht somit nicht ganz dem theoretischen Wert ($e_{0,\text{theo}}=1.602\cdot 10^{-19}\,\unit{\coulomb}$ \cite{e}), 
-welcher ebenfalls in \autoref{fig:ladungkorr} dargestellt ist.
+welcher ebenfalls in \autoref{fig:ladungkorr} mit einer Gerade dargestellt ist.
 
 Die Avogadro-Konstante wird über die Formel 
 \begin{equation*}
     N_{\text{A}}=\frac{F}{e_0} 
 \end{equation*}
-wobei F die Faraday-Konstante mit einem Wert $9.648\cdot 10^4\, \unit{\frac{\coulomb}{\mol}}$ ist.
+wobei F die Faraday-Konstante mit einem Wert $9.648\cdot 10^4\, \unit{\frac{\coulomb}{\mol}}$ ist, bestimmt.
 Aus der oben bestimmten Ladung folgt so die Avogadro-Konstante
 \begin{equation*}
     N_{\text{A,exp}}=\frac{F}{2.417\cdot 10^{-19}\,\unit{\coulomb}}= 3.992\cdot 10^{23}\, \unit{\mol}^{-1}
