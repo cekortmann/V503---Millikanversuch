@@ -18,13 +18,13 @@ qcerr=[0.005,0.0007,0.0015, 0.005]
 def näherung(a,x,b):
     return a*x + b
 
-e = 1.602
+e = 2.3883
 
 messwerte=[3,4,9,29]
 x=np.linspace(0,30,100)
 plt.plot(messwerte, qc0, 'x', label='Ladung nach Korrektur')
-etick = [0, e, 2*e, 3*e, 4*e, 5*e]
-etickname = [r'$0$', r'$e$', r'$2e$', r'$3e$', r'$4e$', r'$5e$']
+etick = [e, 2*e, 5*e, 10*e, 15*e, 20*e, 25*e, 30*e]
+etickname = [r'$e$', r'$2e$', r'$5e$', r'$10e$', r'$15e$', r'$20e$', r'$25e$', r'$30e$']
 plt.plot(x, 1.609*x, '-', label='Theoriekurve mit Literaturwert')
 plt.errorbar(messwerte, qc0, yerr=qcerr, elinewidth = 0.7, linewidth = 0, markersize = 7, capsize=3)
 plt.yticks(etick, etickname)
@@ -32,12 +32,20 @@ plt.xlabel(r'n Vielfache von dem GGT')
 plt.ylabel(r'Ladung der Öltröpfchen in $Q \, / \, 10^{-19} \mathrm{C}$ ')
 #plt.xlim(0, )
 y,x = np.genfromtxt('Ladung.txt', unpack=True)
-params = curve_fit(näherung,x,y)
-a_fit = params[0][0]
+#params = curve_fit(näherung,x,y)
+#a_fit = params[0][0]
+
+para, pcov = curve_fit(näherung, x, y)
+a_fit, b = para
+pcov = np.sqrt(np.diag(pcov))
+fa, fb = pcov
+ua = ufloat(a_fit, fa) 
+ub = ufloat(b, fb)
 #b_fit = params[0][1]
 h=np.linspace(0,30,10)
-#plt.plot(h, näherung(a_fit,h), 'orange', linewidth = 1, label = 'lineare Ausgleichskurve', alpha=0.5)
-print('a_fit', a_fit)
+plt.plot(h, näherung(a_fit,h, b), 'orange', linewidth = 1, label = 'lineare Ausgleichskurve', alpha=0.5)
+print('a_fit', ua)
+print('b', ub)
 #print('b_fit', b_fit)
 #plt.xticks(color='w')
 plt.grid()
