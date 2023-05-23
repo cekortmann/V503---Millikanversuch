@@ -13,18 +13,18 @@ from uncertainties.unumpy import (nominal_values as noms,   # Wert:             
 
 # Plot 1:
 
-qc0=[7.776,10.198, 22.059, 69.88]
-qcerr=[0.005,0.0007,0.0015, 0.005]
+qc0=[1.09, 1.31, 3.15, 5.9, 9.6]
+qcerr=[0.07, 0.09, 0.20, 0.4, 0.6]
 def näherung(a,x,b):
     return a*x + b
 
-e = 2.3883
+e = 1.65
 
-messwerte=[3,4,9,29]
-x=np.linspace(0,30,100)
+messwerte=[1, 1, 2, 4, 6]
+x=np.linspace(0,7,100)
 plt.plot(messwerte, qc0, 'x', label='Ladung nach Korrektur')
-etick = [e, 2*e, 5*e, 10*e, 15*e, 20*e, 25*e, 30*e]
-etickname = [r'$e$', r'$2e$', r'$5e$', r'$10e$', r'$15e$', r'$20e$', r'$25e$', r'$30e$']
+etick = [e, 2*e, 3*e, 4*e, 5*e, 6*e, 25*e, 30*e]
+etickname = [r'$e$', r'$2e$', r'$3e$', r'$4e$', r'$5e$', r'$6e$', r'$25e$', r'$30e$']
 plt.plot(x, 1.609*x, '-', label='Theoriekurve mit Literaturwert')
 plt.errorbar(messwerte, qc0, yerr=qcerr, elinewidth = 0.7, linewidth = 0, markersize = 7, capsize=3)
 plt.yticks(etick, etickname)
@@ -42,7 +42,7 @@ fa, fb = pcov
 ua = ufloat(a_fit, fa) 
 ub = ufloat(b, fb)
 #b_fit = params[0][1]
-h=np.linspace(0,30,10)
+h=np.linspace(0,7,10)
 plt.plot(h, näherung(a_fit,h, b), 'orange', linewidth = 1, label = 'lineare Ausgleichskurve', alpha=0.5)
 print('a_fit', ua)
 print('b', ub)
