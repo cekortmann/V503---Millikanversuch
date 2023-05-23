@@ -25,8 +25,8 @@ x=np.linspace(0,7,100)
 plt.plot(messwerte, qc0, 'x', label='Ladung nach Korrektur')
 etick = [e, 2*e, 3*e, 4*e, 5*e, 6*e, 25*e, 30*e]
 etickname = [r'$e$', r'$2e$', r'$3e$', r'$4e$', r'$5e$', r'$6e$', r'$25e$', r'$30e$']
-plt.plot(x, 1.609*x, '-', label='Theoriekurve mit Literaturwert')
-plt.errorbar(messwerte, qc0, yerr=qcerr, elinewidth = 0.7, linewidth = 0, markersize = 7, capsize=3)
+plt.plot(x, 1.609*x, 'green',linewidth = 1, label='Theoriekurve mit Literaturwert', alpha = 0.5)
+plt.errorbar(messwerte, qc0, yerr=qcerr, elinewidth = 0.7, color = 'blue', linewidth = 0,  markersize = 7, capsize=3)
 plt.yticks(etick, etickname)
 plt.xlabel(r'n Vielfache von dem GGT')
 plt.ylabel(r'Ladung der Öltröpfchen in $Q \, / \, 10^{-19} \mathrm{C}$ ')
